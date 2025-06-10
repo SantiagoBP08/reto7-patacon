@@ -1,0 +1,20 @@
+def calcular_potencia(x, n):
+"""
+Calcula x elevado a la potencia n usando ciclos.
+
+Parámetros:
+x (float): Base de la potencia.
+n (int): Exponente de la potencia.
+Retorno:
+float: Resultado de x^n.
+"""
+resultado = 1
+for _ in range(n):
+resultado *= x
+return resultado
+
+# Programa principal
+if __name__ == "__main__":
+    x = float(input("Ingrese el valor de x (base): "))
+    n = int(input("Ingrese el valor de n (exponente): "))
+    print(f"{x} elevado a la potencia {n} es: {calcular_potencia(x, n)}")
