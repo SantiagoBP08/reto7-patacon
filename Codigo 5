@@ -1,0 +1,18 @@
+ def calcular_potencia_dos(n):
+ """
+ Calcula 2 elevado a la potencia n usando ciclos.
+
+ Parámetros:
+ n (int): Potencia a la que se elevará el número 2.
+ Retorno:
+ int: Resultado de 2^n.
+ """
+ resultado = 1
+ for _ in range(n):
+ resultado *= 2
+ return resultado
+
+# Programa principal
+if __name__ == "__main__":
+    n = int(input("Ingrese el valor de n: "))
+    print(f"2 elevado a la potencia {n} es: {calcular_potencia_dos(n)}")
