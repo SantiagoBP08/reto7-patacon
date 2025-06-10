@@ -1,0 +1,26 @@
+def aproximar_exponencial(x, n):
+"""
+Calcula una aproximación de e^x utilizando los primeros n términos de la serie de Taylor.
+
+ Parámetros:
+     x (float): Valor real para el cual se aproxima la exponencial.
+     n (int): Número de términos de la serie de Taylor.
+ Retorno:
+     float: Aproximación de e^x.
+ """
+ suma = 0
+ for i in range(n):
+      suma += x**i / math.factorial(i)
+  return suma
+
+# Programa principal
+if __name__ == "__main__":
+     x = float(input("Ingrese el valor de x: "))
+     n = int(input("Ingrese el número de términos (n): "))
+     aproximacion = aproximar_exponencial(x, n)
+     valor_real = math.exp(x)
+     diferencia = abs(valor_real - aproximacion)
+
+     print(f"Aproximación de e^{x} con {n} términos: {aproximacion}")
+     print(f"Valor real: {valor_real}")
+     print(f"Diferencia: {diferencia}")
