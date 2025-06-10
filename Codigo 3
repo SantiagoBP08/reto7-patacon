@@ -1,1 +1,18 @@
+def numeros_pares_descendentes(n):
+"""
+Imprime los números pares en orden descendente desde n hasta 2.
 
+Parámetros: 
+- n (int): Número natural mayor o igual a 2
+Si n es impar, se reduce 1 para comenzar desde el par más cercano
+"""
+if n % 2 != 0: # Revisamos si n es par o impar dependiendo de su módulo, si su residuo es 0 es par, si es 1 es impar.
+  n -= 1 # Ajuste si n es impar, se resta 1 y así empezamos desde el impar anterior.
+while n >= 2: # Se utiliza el ciclo while para recorrer todos los números mayores a 2 
+    print(n) # Imprimir el número par actual
+    n -=2 # Se resta 2 para ir al siguiente par menor
+
+# Punto de entrada del usuario
+if _name_ == "_main_":
+n = int(input("Ingrese un número natural mayor o igual a 2: ")) # Solicitar al usuario que digite un número
+numeros_pares_descendentes(n) # Llamada a la función de los pares descentendes
