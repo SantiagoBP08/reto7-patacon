@@ -1,1 +1,12 @@
+def imprimir_cuadrados():
+"""
+Imprime los números del 1 al 100 con sus respectivos cuadrados.
+"""
+numero = 1 # Iniciamos definiendo la variable en 1
+while numero <= 100: # Se utiliza el ciclo while para recorrer todos los números del 1 al 100
+cuadrado = numero ** 2 #  Calculamos el cuadrado del número
+print(f"{numero}^2 = {numero**2}") # Imprimimos el número y su cuadrado
+numero += 1 #Incrementamos el número en 1 y así hasta que llegue a 100
 
+if _name_ == "_main_":
+imprimir_cuadrados()
