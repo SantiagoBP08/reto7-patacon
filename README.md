@@ -124,3 +124,104 @@ Nota: Todo el código de aquí en adelante debe ir debidamente documentado.
        if __name__ == "__main__":
            n = int(input("Ingrese el valor de n: "))
            print(f"2 elevado a la potencia {n} es: {calcular_potencia_dos(n)}")
+
+6. Leer un número natural n, leer otro dato de tipo real xy calcular x^n usando ciclos for. Aviso legal: Trate de no utilizar el operador de potencia (**).
+
+       def calcular_potencia(x, n):
+       """
+        Calcula x elevado a la potencia n usando ciclos.
+    
+        Parámetros:
+        x (float): Base de la potencia.
+        n (int): Exponente de la potencia.
+        Retorno:
+        float: Resultado de x^n.
+        """
+        resultado = 1
+        for _ in range(n):
+        resultado *= x
+        return resultado
+
+       # Programa principal
+       if __name__ == "__main__":
+        x = float(input("Ingrese el valor de x (base): "))
+        n = int(input("Ingrese el valor de n (exponente): "))
+        print(f"{x} elevado a la potencia {n} es: {calcular_potencia(x, n)}")
+
+7. Diseñe un programa que muestre las tablas de multiplicar del 1 al 9.
+   
+       def mostrar_tablas():
+        """
+       Muestra las tablas de multiplicar del 1 al 9.
+        """
+        for i in range(1, 10):
+            print(f"Tabla del {i}")
+            print("-" * 15)
+            for j in range(1, 11):
+                print(f"{i} x {j} = {i * j}")
+            print()
+
+       # Programa principal
+       if __name__ == "__main__":
+            mostrar_tablas()
+
+8. Diseñar una función que permita calcular una aproximación de la función exponencial alrededor de 0 para cualquier valor x (real), utilizando los primeros n términos de la serie de Taylor. Nota: use math para traer la función exponencial y mostrar la diferencia entre el valor real y la aproximación.
+
+       def aproximar_exponencial(x, n):
+       """
+       Calcula una aproximación de e^x utilizando los primeros n términos de la serie de Taylor.
+    
+        Parámetros:
+            x (float): Valor real para el cual se aproxima la exponencial.
+            n (int): Número de términos de la serie de Taylor.
+        Retorno:
+            float: Aproximación de e^x.
+        """
+        suma = 0
+        for i in range(n):
+             suma += x**i / math.factorial(i)
+         return suma
+
+       # Programa principal
+       if __name__ == "__main__":
+            x = float(input("Ingrese el valor de x: "))
+            n = int(input("Ingrese el número de términos (n): "))
+            aproximacion = aproximar_exponencial(x, n)
+            valor_real = math.exp(x)
+            diferencia = abs(valor_real - aproximacion)
+
+            print(f"Aproximación de e^{x} con {n} términos: {aproximacion}")
+            print(f"Valor real: {valor_real}")
+            print(f"Diferencia: {diferencia}")
+
+9. Diseñar una función que permita calcular una aproximación de la función seno alrededor de 0 para cualquier valor x (real), utilizando los primeros n términos de la serie de Maclaurin. Nota: use math para traer la función seno y mostrar la diferencia entre el valor real y la aproximación.
+
+       def aproximar_seno(x, n):
+        """
+        Calcula una aproximación de sin(x) utilizando los primeros n términos de la serie de Maclaurin.
+    
+        Parámetros:
+            x (float): Valor real para el cual se aproxima el seno.
+            n (int): Número de términos de la serie de Maclaurin.
+        Retorno:
+        float: Aproximación de sin(x).
+        """
+        suma = 0
+        for i in range(n):
+            termino = ((-1)**i * x**(2*i + 1)) / math.factorial(2*i + 1)
+            suma += termino
+       return suma
+
+        # Programa principal
+        if __name__ == "__main__":
+            x = float(input("Ingrese el valor de x (en radianes): "))
+            n = int(input("Ingrese el número de términos (n): "))
+            aproximacion = aproximar_seno(x, n)
+            valor_real = math.sin(x)
+            diferencia = abs(valor_real - aproximacion)
+
+            print(f"Aproximación de sin({x}) con {n} términos: {aproximacion}")
+            print(f"Valor real: {valor_real}")
+            print(f"Diferencia: {diferencia}")
+
+   Estos son los 9 codigos documentados en el cuaderno del repo. (los ultimos 2 puntos los hice con ayuda de chatgpt, ya que se me hicieron algo confusos).
